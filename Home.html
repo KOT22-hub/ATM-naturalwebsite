@@ -1,518 +1,700 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>ATM Naturals</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free HTML Templates" name="keywords">
-    <meta content="Free HTML Templates" name="description">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Favicon -->
-    <link href="img/ATM NATURALS.png" rel="icon">
+    <link rel="icon" href="img/ATM NATURALS.png" />
 
-    <!-- Google Web Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet"> 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Open+Sans:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Font Stylesheets -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"
+    />
 
-    <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <!-- Libraries Stylesheets -->
+    <link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.min.css" />
 
-    <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap & Custom Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-    <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
     <style>
-        .loader {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100vw;
-          height: 100vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background: #333333;
-          transition: opacity 0.75s, visibility 0.75s;
-        }
-      
-        .loader--hidden {
-          opacity: 0;
-          visibility: hidden;
-        }
-      
-        .loader::after {
-          content: "";
-          width: 75px;
-          height: 75px;
-          border: 15px solid #dddddd;
-          border-top-color: #009578;
-          border-radius: 50%;
-          animation: loading 0.75s ease infinite;
-        }
-      
-        @keyframes loading {
-          from {
-            transform: rotate(0turn);
-          }
-          to {
-            transform: rotate(1turn);
-          }
-        }
-      </style>
+      /* Ensure the navbar and topbar fit well on mobile */
+      .topbar {
+        background: #333;
+        color: white;
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+      .topbar p {
+        margin: 0;
+      }
 
+      .navbar {
+        padding: 10px 20px;
+      }
 
-      
-</head>
-<body>
- 
+      .navbar-brand img {
+        max-width: 150px;
+        height: auto;
+      }
 
-   <div>
-    <!-- Topbar Start -->
-    <div class="container-fluid bg-secondary ps-5 pe-0 d-none d-lg-block">
-        <div class="row gx-0">
-            <div class="col-md-6 text-center text-lg-start mb-2 mb-lg-0">
-                <div class="d-inline-flex align-items-center">
-                 
-                </div>
-            </div>
-            <div class="col-md-6 text-center text-lg-end">
-                <div class="position-relative d-inline-flex align-items-center bg-primary text-white top-shape px-5">
-                    <div class="me-3 pe-3 border-end py-2">
-                        <p class="m-0"><i class="fa fa-envelope-open me-2"></i>info@atmnaturals.com</p>
-                    </div>
-                    <div class="py-2">
-                        <p class="m-0"><i class="fa fa-phone-alt me-2"></i>+27 68 401 1592</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      .navbar-nav {
+        text-align: center;
+      }
+
+      .navbar-toggler {
+        border: none;
+        outline: none;
+      }
+
+      /* Carousel Text Adjustments */
+      .carousel-caption {
+        text-align: center;
+        bottom: 20%;
+      }
+
+      .carousel-caption h1 {
+        font-size: 2rem;
+      }
+
+      .carousel-caption .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+      }
+
+      @media (max-width: 768px) {
+        .carousel-caption {
+          bottom: 10%;
+        }
+        .carousel-caption h1 {
+          font-size: 1.5rem;
+        }
+        .carousel-caption .btn {
+          font-size: 12px;
+          padding: 8px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Topbar -->
+    <div class="topbar d-flex justify-content-between align-items-center">
+      <p><i class="fa fa-envelope-open"></i> info@atmnaturals.com</p>
+      <p><i class="fa fa-phone-alt"></i> +27 68 401 1592</p>
     </div>
-    <!-- Topbar End -->
 
-   <!-- Carousel Start -->
-  <div class="container-fluid p-0">
-    <div id="header-carousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="w-100" src="img/transport-logistics-products.jpg" alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center w-100">
-                    <!-- Navbar Inside Carousel -->
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute top-0 start-0 w-100 px-5 py-3">
-                        <a href="Home.html" class="navbar-brand text-white">
-                            <img src="/img/ATM NATURALS [Recovered].png" alt="" width="100%" height="240px"> 
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <ul class="navbar-nav ms-auto gap-4" style="padding: 100px 100px;">
-                                <li class="nav-item"><a href="Home.html" class="nav-link active text-white">Home</a></li>
-                                <li class="nav-item"><a href="about.html" class="nav-link text-white">About</a></li>
-                                <li class="nav-item"><a href="service.html" class="nav-link text-white">Products</a></li>
-                                
-                                <li class="nav-item"><a href="/contact.html" class="nav-link text-white">Contact</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-
-                    <!-- End Navbar Inside Carousel -->
-                    <div class="p-3 text-center" style="max-width: 900px;">
-                        <h5 class="text-white text-uppercase">Petroleum WholeSale</h5>
-                        <h1 class="display-1 text-white mb-md-4">Moving Africa Forward</h1>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 rounded-pill">Get Quote</a>
-                        <a href="/contact.html" class="btn btn-secondary py-md-3 px-md-5 rounded-pill">Contact Us</a>
-                    </div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <img class="w-100" src="img/transport-logistics-produc(1).jpg" alt="Image">
-                <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
-                    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent position-absolute top-0 start-0 w-100 px-5 py-3">
-                        <a href="Home.html" class="navbar-brand text-white">
-                            <img src="/img/ATM NATURALS [Recovered].png" alt="" width="100%" height="240px"> 
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-                        <div class="collapse navbar-collapse" id="navbarCollapse">
-                            <ul class="navbar-nav ms-auto gap-4">
-                                <li class="nav-item"><a href="Home.html" class="nav-link active text-white">Home</a></li>
-                                <li class="nav-item"><a href="about.html" class="nav-link text-white">About</a></li>
-                                <li class="nav-item"><a href="service.html" class="nav-link text-white">Products</a></li>
-                              
-                                <li class="nav-item"><a href="contact.html" class="nav-link text-white">Contact</a></li>
-                            </ul>
-                        </div>
-                    </nav>
-                    <div class="p-3 text-center" style="max-width: 900px;">
-                        <h5 class="text-white text-uppercase">Petroleum WholeSale</h5>
-                        <h1 class="display-1 text-white mb-md-4">Take Our Help To Reach The Top Level</h1>
-                        <a href="" class="btn btn-primary py-md-3 px-md-5 me-3 rounded-pill">Get Quote</a>
-                        <a href="" class="btn btn-secondary py-md-3 px-md-5 rounded-pill">Contact Us</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <a href="Home.html" class="navbar-brand">
+          <img
+            src="img/ATM NATURALS [Recovered].png"
+            alt="ATM Naturals"
+            style="width: 300px"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="/Home.html" class="nav-link">Home</a>
+            </li>
+            <li class="nav-item">
+              <a href="/about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="/service.html" class="nav-link">Products</a>
+            </li>
+            <li class="nav-item">
+              <a href="/contact.html" class="nav-link">Contact</a>
+            </li>
+          </ul>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-  </div>
-   <!-- Carousel End -->
-   
+      </div>
+    </nav>
 
+    <!-- Carousel -->
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="img/transport-logistics-products.jpg"
+            class="d-block w-100"
+            alt="Slide 1"
+          />
+          <div class="carousel-caption">
+            <h5 class="text-white text-uppercase">Petroleum Wholesale</h5>
+            <h1 class="text-white">Moving Africa Forward</h1>
+            <a href="#" class="btn btn-primary">Get Quote</a>
+            <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img
+            src="img/transport-logistics-produc(1).jpg"
+            class="d-block w-100"
+            alt="Slide 2"
+          />
+          <div class="carousel-caption">
+            <h5 class="text-white text-uppercase">Petroleum Wholesale</h5>
+            <h1 class="text-white">Take Our Help To Reach The Top</h1>
+            <a href="#" class="btn btn-primary">Get Quote</a>
+            <a href="/contact.html" class="btn btn-secondary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#header-carousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#header-carousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+    <!-- Carousel End -->
 
     <!-- About Start -->
     <div class="container-fluid bg-secondary p-0">
-        <div class="row g-0">
-            <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">About <span class="text-primary">Us</span></h1>
-                <h4 class="text-primary mb-4">ATM Naturals is a fully licensed petroleum wholesaler, authorized to supply a wide range of petroleum products, including fuel, diesel, paraffin, biofuel, and jet fuel.</h4>
-                <p class="mb-4" style="font-size: 23px;">Our commitment to compliance and excellence ensures we meet the diverse energy needs of our clients with integrity and reliability.</p>
-                <a href="/about.html" class="btn btn-primary py-md-3 px-md-5 rounded-pill">Learn more </a>
-            </div>
-            <div class="col-lg-6">
-                <div class="h-100 d-flex flex-column justify-content-center bg-primary p-5">
-                    <h2 class="text-white mb-4" >Contact Details</h2>
-                    
-                    <div class="d-flex align-items-start text-white gap-4">
-                        <div class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle" style="width: 60px; height: 60px;">
-                            <i class="fa fa-user-tie fs-4"></i>
-                        </div>
-                        <div>
-                            <p class="mb-1" style="font-size: 22px;"><span class="fw-bold">Email:</span> info@atmnaturals.com</p>
-                            <p style="font-size: 22px;"><span class="fw-bold">Telephone:</span> +27 68 401 1592</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            
+      <div class="row g-0">
+        <div class="col-lg-6 py-6 px-5">
+          <h1 class="display-5 mb-4">
+            About <span class="text-primary">Us</span>
+          </h1>
+          <h4 class="text-primary mb-4">
+            ATM Naturals is a fully licensed petroleum wholesaler, authorized to
+            supply a wide range of petroleum products, including fuel, diesel,
+            paraffin, biofuel, and jet fuel.
+          </h4>
+          <p class="mb-4" style="font-size: 23px">
+            Our commitment to compliance and excellence ensures we meet the
+            diverse energy needs of our clients with integrity and reliability.
+          </p>
+          <a
+            href="/about.html"
+            class="btn btn-primary py-md-3 px-md-5 rounded-pill"
+            >Learn more
+          </a>
         </div>
+        <div class="col-lg-6">
+          <div
+            class="h-100 d-flex flex-column justify-content-center bg-primary p-5"
+          >
+            <h2 class="text-white mb-4">Contact Details</h2>
+
+            <div class="d-flex align-items-start text-white gap-4">
+              <div
+                class="d-flex flex-shrink-0 align-items-center justify-content-center bg-white text-primary rounded-circle"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-user-tie fs-4"></i>
+              </div>
+              <div>
+                <p class="mb-1" style="font-size: 22px">
+                  <span class="fw-bold">Email:</span> info@atmnaturals.com
+                </p>
+                <p style="font-size: 22px">
+                  <span class="fw-bold">Telephone:</span> +27 68 401 1592
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- About End -->
-    
 
     <!-- Services Start -->
     <div class="container-fluid pt-6 px-5">
-        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 mb-0">What We Offer</h1>
-            <hr class="w-25 mx-auto bg-primary">
+      <div class="text-center mx-auto mb-5" style="max-width: 600px">
+        <h1 class="display-5 mb-0">What We Offer</h1>
+        <hr class="w-25 mx-auto bg-primary" />
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item bg-secondary text-center px-5">
+            <div
+              class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4"
+              style="width: 90px; height: 90px"
+            >
+              <i class="fa fa-user-tie fa-2x"></i>
+            </div>
+            <h3 class="mb-3">Logistics</h3>
+            <p class="mb-0">
+              Our reliable fleet and real-time tracking ensure safe, efficient,
+              and on-time fuel deliveries every time.
+            </p>
+          </div>
         </div>
-        <div class="row g-5">
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-secondary text-center px-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                        <i class="fa fa-user-tie fa-2x"></i>
-                    </div>
-                    <h3 class="mb-3">Logistics</h3>
-                    <p class="mb-0">Our reliable fleet and real-time tracking ensure safe, efficient, and on-time fuel deliveries every time.</p>
-                </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item bg-secondary text-center px-5">
+            <div
+              class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4"
+              style="width: 90px; height: 90px"
+            >
+              <i class="fa fa-chart-pie fa-2x"></i>
             </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-secondary text-center px-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                        <i class="fa fa-chart-pie fa-2x"></i>
-                    </div>
-                    <h3 class="mb-3">Petroleum Products</h3>
-                    <p class="mb-0">We supply premium-quality, industry-tested fuels tailored to meet diverse energy needs.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6">
-                <div class="service-item bg-secondary text-center px-5">
-                    <div class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
-                        <i class="fa fa-chart-line fa-2x"></i>
-                    </div>
-                    <h3 class="mb-3">Storage Facilities </h3>
-                    <p class="mb-0">Our secure, compliant storage solutions maintain fuel integrity and ensure uninterrupted supply</p>
-                </div>
-            </div>
-          
+            <h3 class="mb-3">Petroleum Products</h3>
+            <p class="mb-0">
+              We supply premium-quality, industry-tested fuels tailored to meet
+              diverse energy needs.
+            </p>
+          </div>
         </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="service-item bg-secondary text-center px-5">
+            <div
+              class="d-flex align-items-center justify-content-center bg-primary text-white rounded-circle mx-auto mb-4"
+              style="width: 90px; height: 90px"
+            >
+              <i class="fa fa-chart-line fa-2x"></i>
+            </div>
+            <h3 class="mb-3">Storage Facilities</h3>
+            <p class="mb-0">
+              Our secure, compliant storage solutions maintain fuel integrity
+              and ensure uninterrupted supply
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Services End -->
 
-
     <!-- Features Start -->
     <div class="container-fluid py-6 px-5">
-        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 mb-0">WHY PARTNER WITH US</h1>
-            <hr class="w-25 mx-auto bg-primary">
+      <div class="text-center mx-auto mb-5" style="max-width: 600px">
+        <h1 class="display-5 mb-0">WHY PARTNER WITH US</h1>
+        <hr class="w-25 mx-auto bg-primary" />
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="row g-5">
+            <div class="col-12">
+              <div
+                class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-cubes fs-4 text-white"></i>
+              </div>
+              <h3>Punctual delivery time</h3>
+              <p class="mb-0">
+                We ensure on-time fuel deliveries with a well-coordinated
+                logistics network, minimizing downtime for your business.
+              </p>
+            </div>
+            <div class="col-12">
+              <div
+                class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-percent fs-4 text-white"></i>
+              </div>
+              <h3>We offer a 7 day credit facility</h3>
+              <p class="mb-0">
+                We offer flexible payment options, allowing businesses to manage
+                cash flow efficiently with a seven-day credit facility
+              </p>
+            </div>
+          </div>
         </div>
-        <div class="row g-5">
-            <div class="col-lg-4">
-                <div class="row g-5">
-                    <div class="col-12">
-                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fa fa-cubes fs-4 text-white"></i>
-                        </div>
-                        <h3>
-                            Punctual delivery time</h3>
-                        <p class="mb-0">We ensure on-time fuel deliveries with a well-coordinated logistics network, minimizing downtime for your business.</p>
-                    </div>
-                    <div class="col-12">
-                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fa fa-percent fs-4 text-white"></i>
-                        </div>
-                        <h3>We offer a 7 day credit facility
-                        </h3>
-                        <p class="mb-0">We offer flexible payment options, allowing businesses to manage cash flow efficiently with a seven-day credit facility</p>
-                    </div>
-                  
-                </div>
+        <div class="col-lg-4">
+          <div class="d-block bg-primary h-100 text-center">
+            <img class="img-fluid" src="img/agricultural-silo.jpg" alt="" />
+            <div class="p-4">
+              <p class="text-white mb-4">
+                With a focus on quality assurance and customer satisfaction, We
+                ensure that your fuel supply remains uninterrupted, helping you
+                maintain operations without delays. My transparent pricing,
+                dedicated support, and flexible supply options set us apart from
+                the competition. Let’s work together to build a long-term
+                partnership that keeps your business running smoothly and
+                efficiently.
+              </p>
+              <a href="" class="btn btn-light py-md-3 px-md-5 rounded-pill mb-2"
+                >Learn More</a
+              >
             </div>
-            <div class="col-lg-4">
-                <div class="d-block bg-primary h-100 text-center">
-                    <img class="img-fluid" src="img/agricultural-silo.jpg" alt="">
-                    <div class="p-4">
-                        <p class="text-white mb-4"> With a focus on quality assurance and customer satisfaction, We ensure that your fuel supply remains uninterrupted, helping you maintain operations without delays. My transparent pricing, dedicated support, and flexible supply options set us apart from the competition. Let’s work together to build a long-term partnership that keeps your business running smoothly and efficiently.</p>
-                        <a href="" class="btn btn-light py-md-3 px-md-5 rounded-pill mb-2">Learn More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="row g-5">
-                    <div class="col-12">
-                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="far fa-smile-beam fs-4 text-white"></i>
-                        </div>
-                        <h3>24/7 Customer Service</h3>
-                        <p class="mb-0">Our dedicated support team is available around the clock to assist with orders, inquiries, and emergency fuel requirements.</p>
-                    </div>
-                    <div class="col-12">
-                        <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
-                            <i class="fa fa-user-tie fs-4 text-white"></i>
-                        </div>
-                        <h3>Quality Tested products</h3>
-                        <p class="mb-0">Every batch of fuel undergoes rigorous testing to meet industry standards, ensuring optimal performance and reliability.</p>
-                    </div>
-                    
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="col-lg-4">
+          <div class="row g-5">
+            <div class="col-12">
+              <div
+                class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                style="width: 60px; height: 60px"
+              >
+                <i class="far fa-smile-beam fs-4 text-white"></i>
+              </div>
+              <h3>24/7 Customer Service</h3>
+              <p class="mb-0">
+                Our dedicated support team is available around the clock to
+                assist with orders, inquiries, and emergency fuel requirements.
+              </p>
+            </div>
+            <div class="col-12">
+              <div
+                class="bg-primary rounded-circle d-flex align-items-center justify-content-center mb-3"
+                style="width: 60px; height: 60px"
+              >
+                <i class="fa fa-user-tie fs-4 text-white"></i>
+              </div>
+              <h3>Quality Tested products</h3>
+              <p class="mb-0">
+                Every batch of fuel undergoes rigorous testing to meet industry
+                standards, ensuring optimal performance and reliability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Features Start -->
-
 
     <!-- Quote Start -->
     <div class="container-fluid bg-secondary px-0">
-        <div class="row g-0">
-            <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">Request A Free Quote</h1>
-                
-                <form class="p-4 bg-light rounded shadow">
-                    <div class="row gx-3">
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="form-floating-1" placeholder="John Doe">
-                                <label for="form-floating-1">Full Name</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="form-floating-1" placeholder="John Doe">
-                                <label for="form-floating-1">Email</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="form-floating-1" placeholder="John Doe">
-                                <label for="form-floating-1">Phone</label>
-                            </div>
-                        </div>
-                        <div class="col-6">
-                            <button class="btn btn-primary w-100 h-100" type="submit">Request A Quote</button>
-                        </div>
-                        <!-- New Text Area -->
-                        <div class="col-12 mt-3">
-                            <div class="form-floating">
-                                <textarea class="form-control" id="message" placeholder="Enter your message" style="height: 150px;"></textarea>
-                                <label for="message">Your Message</label>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-                
-            </div>
-            <div class="col-lg-6" style="min-height: 400px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="img/african-american-worker-standing-uniform-wearing-safety-hat-factory.jpg" style="object-fit: cover;">
+      <div class="row g-0">
+        <div class="col-lg-6 py-6 px-5">
+          <h1 class="display-5 mb-4">Request A Free Quote</h1>
+
+          <form class="p-4 bg-light rounded shadow">
+            <div class="row gx-3">
+              <div class="col-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="form-floating-1"
+                    placeholder="John Doe"
+                  />
+                  <label for="form-floating-1">Full Name</label>
                 </div>
+              </div>
+              <div class="col-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="form-floating-1"
+                    placeholder="John Doe"
+                  />
+                  <label for="form-floating-1">Email</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="form-floating-1"
+                    placeholder="John Doe"
+                  />
+                  <label for="form-floating-1">Phone</label>
+                </div>
+              </div>
+              <div class="col-6">
+                <button class="btn btn-primary w-100 h-100" type="submit">
+                  Request A Quote
+                </button>
+              </div>
+              <!-- New Text Area -->
+              <div class="col-12 mt-3">
+                <div class="form-floating">
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    placeholder="Enter your message"
+                    style="height: 150px"
+                  ></textarea>
+                  <label for="message">Your Message</label>
+                </div>
+              </div>
             </div>
+          </form>
         </div>
+        <div class="col-lg-6" style="min-height: 400px">
+          <div class="position-relative h-100">
+            <img
+              class="position-absolute w-100 h-100"
+              src="img/african-american-worker-standing-uniform-wearing-safety-hat-factory.jpg"
+              style="object-fit: cover"
+            />
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Quote End -->
 
-
     <!-- Team Start -->
-   
+
     <!-- Team End -->
 
-
     <!-- Testimonial Start -->
-    <div class="container-fluid bg-secondary p-0" style="margin-top: 100px;">
-        <div class="row g-0">
-            <div class="col-lg-6" style="min-height: 500px;">
-                <div class="position-relative h-100">
-                    <img class="position-absolute w-100 h-100" src="img/business-partners-closing-deal.jpg" style="object-fit: cover;">
-                </div>
-            </div>
-            <div class="col-lg-6 py-6 px-5">
-                <h1 class="display-5 mb-4">What Say Our Client!!!</h1>
-                <div class="owl-carousel testimonial-carousel">
-                    <div class="testimonial-item">
-                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>Reliable fuel supply is critical to our business, and partnering with ATM Naturals has been a game-changer. Their timely deliveries, competitive pricing, and exceptional customer service have made fuel management effortless. We highly recommend them to any business looking for a trustworthy supplier</p>
-                        <div class="d-flex align-items-center">
-                            
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <p class="fs-4 fw-normal mb-4"><i class="fa fa-quote-left text-primary me-3"></i>We've been working with ATM Naturals for over a year, and their commitment to quality and reliability is unmatched. Their seamless ordering process and consistent fuel supply have kept our fleet running smoothly. A top-tier fuel supplier we trust!</p>
-                        <div class="d-flex align-items-center">
-                           
-                        </div>
-                    </div>
-                </div>
-            </div>
+    <div class="container-fluid bg-secondary p-0" style="margin-top: 100px">
+      <div class="row g-0">
+        <div class="col-lg-6" style="min-height: 500px">
+          <div class="position-relative h-100">
+            <img
+              class="position-absolute w-100 h-100"
+              src="img/business-partners-closing-deal.jpg"
+              style="object-fit: cover"
+            />
+          </div>
         </div>
+        <div class="col-lg-6 py-6 px-5">
+          <h1 class="display-5 mb-4">What Say Our Client!!!</h1>
+          <div class="owl-carousel testimonial-carousel">
+            <div class="testimonial-item">
+              <p class="fs-4 fw-normal mb-4">
+                <i class="fa fa-quote-left text-primary me-3"></i>Reliable fuel
+                supply is critical to our business, and partnering with ATM
+                Naturals has been a game-changer. Their timely deliveries,
+                competitive pricing, and exceptional customer service have made
+                fuel management effortless. We highly recommend them to any
+                business looking for a trustworthy supplier
+              </p>
+              <div class="d-flex align-items-center"></div>
+            </div>
+            <div class="testimonial-item">
+              <p class="fs-4 fw-normal mb-4">
+                <i class="fa fa-quote-left text-primary me-3"></i>We've been
+                working with ATM Naturals for over a year, and their commitment
+                to quality and reliability is unmatched. Their seamless ordering
+                process and consistent fuel supply have kept our fleet running
+                smoothly. A top-tier fuel supplier we trust!
+              </p>
+              <div class="d-flex align-items-center"></div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Testimonial End -->
 
-
     <!-- Blog Start -->
     <div class="container-fluid py-6 px-5">
-        <div class="text-center mx-auto mb-5" style="max-width: 600px;">
-            <h1 class="display-5 mb-0">Latest Articles</h1>
-            <hr class="w-25 mx-auto bg-primary">
+      <div class="text-center mx-auto mb-5" style="max-width: 600px">
+        <h1 class="display-5 mb-0">Latest Articles</h1>
+        <hr class="w-25 mx-auto bg-primary" />
+      </div>
+      <div class="row g-5">
+        <div class="col-lg-4">
+          <div class="blog-item">
+            <div class="position-relative overflow-hidden">
+              <img
+                class="img-fluid"
+                src="img/field-with-oil-pump-jacks-surrounded-by-greenery-cloudy-sky-sunlight.jpg"
+                alt=""
+              />
+            </div>
+            <div class="bg-secondary d-flex">
+              <div
+                class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+              ></div>
+              <div class="d-flex flex-column justify-content-center py-3 px-4">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"
+                    ><i class="bi bi-person me-2"></i>Post</small
+                  >
+                </div>
+                <a
+                  class="h4"
+                  href="https://www.saoga.org.za/web/oil-and-gas-overview/upstream-oil-gas-south-africa "
+                  target="_blank"
+                  >Oil and Gas Statistics</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row g-5">
-            <div class="col-lg-4">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="img/field-with-oil-pump-jacks-surrounded-by-greenery-cloudy-sky-sunlight.jpg" alt="">
-                    </div>
-                    <div class="bg-secondary d-flex">
-                        <div class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                           
-                        </div>
-                        <div class="d-flex flex-column justify-content-center py-3 px-4">
-                            <div class="d-flex mb-2">
-                                <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Post</small>
-                         
-                            </div>
-                            <a class="h4" href="https://www.saoga.org.za/web/oil-and-gas-overview/upstream-oil-gas-south-africa " target="_blank">Oil and Gas Statistics</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-lg-4">
+          <div class="blog-item">
+            <div class="position-relative overflow-hidden">
+              <img
+                class="img-fluid"
+                src="img/closeup-tank-oil-barrels-red-chemical-drums-vertical-stacked-up.jpg"
+                alt=""
+              />
             </div>
-            <div class="col-lg-4">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="img/closeup-tank-oil-barrels-red-chemical-drums-vertical-stacked-up.jpg" alt="">
-                    </div>
-                    <div class="bg-secondary d-flex">
-                        <div class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                           
-                        </div>
-                        <div class="d-flex flex-column justify-content-center py-3 px-4">
-                            <div class="d-flex mb-2">
-                                <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Post</small>
-                        
-                            </div>
-                            <a class="h4" href="https://www.iea.org/countries/south-africa/oil" target="_blank">Total Oil Supply in South Africa </a>
-                        </div>
-                    </div>
+            <div class="bg-secondary d-flex">
+              <div
+                class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+              ></div>
+              <div class="d-flex flex-column justify-content-center py-3 px-4">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"
+                    ><i class="bi bi-person me-2"></i>Post</small
+                  >
                 </div>
+                <a
+                  class="h4"
+                  href="https://www.iea.org/countries/south-africa/oil"
+                  target="_blank"
+                  >Total Oil Supply in South Africa
+                </a>
+              </div>
             </div>
-            <div class="col-lg-4">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="img/environmental-pollution-factory-exterior-night.jpg" alt="">
-                    </div>
-                    <div class="bg-secondary d-flex">
-                        <div class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                           
-                        </div>
-                        <div class="d-flex flex-column justify-content-center py-3 px-4">
-                            <div class="d-flex mb-2">
-                                <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Post</small>
-                            
-                            </div>
-                            <a class="h4" href="https://fuelsindustry.org.za/overview/" target="_blank">Fuel Industry Association of South Africa</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="col-lg-4">
+          <div class="blog-item">
+            <div class="position-relative overflow-hidden">
+              <img
+                class="img-fluid"
+                src="img/environmental-pollution-factory-exterior-night.jpg"
+                alt=""
+              />
+            </div>
+            <div class="bg-secondary d-flex">
+              <div
+                class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4"
+              ></div>
+              <div class="d-flex flex-column justify-content-center py-3 px-4">
+                <div class="d-flex mb-2">
+                  <small class="text-uppercase me-3"
+                    ><i class="bi bi-person me-2"></i>Post</small
+                  >
+                </div>
+                <a
+                  class="h4"
+                  href="https://fuelsindustry.org.za/overview/"
+                  target="_blank"
+                  >Fuel Industry Association of South Africa</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Blog End -->
-    
 
     <!-- Footer Start -->
     <div class="container-fluid bg-primary text-secondary p-5">
-        <div class="row g-5">
-            <div class="col-12 text-center">
-                <h1 class="display-5 mb-4" style="color: white;">Stay Updated</h1>
-                <form class="mx-auto" style="max-width: 600px;">
-                    <div class="input-group">
-                        <input type="text" class="form-control border-white p-3" placeholder="Your Email">
-                        <button class="btn btn-dark px-4">Sign Up</button>
-                    </div>
-                </form>
+      <div class="row g-5">
+        <div class="col-12 text-center">
+          <h1 class="display-5 mb-4" style="color: white">Stay Updated</h1>
+          <form class="mx-auto" style="max-width: 600px">
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control border-white p-3"
+                placeholder="Your Email"
+              />
+              <button class="btn btn-dark px-4">Sign Up</button>
             </div>
+          </form>
         </div>
+      </div>
     </div>
     <div class="container-fluid bg-dark text-secondary p-5">
-        <div class="row g-5">
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Quick Links</h3>
-                <div class="d-flex flex-column justify-content-start">
-                    <a class="text-secondary mb-2" href="/Home.html"><i class="bi bi-arrow-right text-primary me-2"></i>Home</a>
-                    <a class="text-secondary mb-2" href="/about.html"><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a>
-                    <a class="text-secondary mb-2" href="/service.html"><i class="bi bi-arrow-right text-primary me-2"></i>Our Products</a>
-                    
-                    <a class="text-secondary" href="/contact.html"><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a>
-                </div>
-            </div>
-          
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Get In Touch</h3>
-                
-                <p class="mb-2"><i class="bi bi-envelope-open text-primary me-2"></i>info@atmnaturals.com</p>
-                <p class="mb-0"><i class="bi bi-telephone text-primary me-2"></i>+27 68 401 1592</p>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <h3 class="text-white mb-4">Follow Us</h3>
-                <div class="d-flex">
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-twitter fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-facebook-f fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2" href="#"><i class="fab fa-linkedin-in fw-normal"></i></a>
-                    <a class="btn btn-lg btn-primary btn-lg-square rounded-circle" href="#"><i class="fab fa-instagram fw-normal"></i></a>
-                </div>
-            </div>
+      <div class="row g-5">
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Quick Links</h3>
+          <div class="d-flex flex-column justify-content-start">
+            <a class="text-secondary mb-2" href="/Home.html"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Home</a
+            >
+            <a class="text-secondary mb-2" href="/about.html"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>About Us</a
+            >
+            <a class="text-secondary mb-2" href="/service.html"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Our
+              Products</a
+            >
+
+            <a class="text-secondary" href="/contact.html"
+              ><i class="bi bi-arrow-right text-primary me-2"></i>Contact Us</a
+            >
+          </div>
         </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Get In Touch</h3>
+
+          <p class="mb-2">
+            <i class="bi bi-envelope-open text-primary me-2"></i
+            >info@atmnaturals.com
+          </p>
+          <p class="mb-0">
+            <i class="bi bi-telephone text-primary me-2"></i>+27 68 401 1592
+          </p>
+        </div>
+        <div class="col-lg-3 col-md-6">
+          <h3 class="text-white mb-4">Follow Us</h3>
+          <div class="d-flex">
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="#"
+              ><i class="fab fa-twitter fw-normal"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="#"
+              ><i class="fab fa-facebook-f fw-normal"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle me-2"
+              href="#"
+              ><i class="fab fa-linkedin-in fw-normal"></i
+            ></a>
+            <a
+              class="btn btn-lg btn-primary btn-lg-square rounded-circle"
+              href="#"
+              ><i class="fab fa-instagram fw-normal"></i
+            ></a>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5" style="border-color: rgba(256, 256, 256, .1) !important;">
-        <p class="m-0">&copy; <a class="text-secondary border-bottom" href="#">ATM Naturals</a>. All Rights Reserved. </p>
+    <div
+      class="container-fluid bg-dark text-secondary text-center border-top py-4 px-5"
+      style="border-color: rgba(256, 256, 256, 0.1) !important"
+    >
+      <p class="m-0">
+        &copy;
+        <a class="text-secondary border-bottom" href="#">ATM Naturals</a>. All
+        Rights Reserved.
+      </p>
     </div>
     <!-- Footer End -->
 
-
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
-
+    <a
+      href="#"
+      class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"
+      ><i class="bi bi-arrow-up"></i
+    ></a>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -523,7 +705,5 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
-
-
+  </body>
 </html>
