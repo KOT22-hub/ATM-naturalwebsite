@@ -387,7 +387,7 @@
         <div class="col-lg-6 py-6 px-5">
           <h1 class="display-5 mb-4">Request A Free Quote</h1>
 
-          <form class="p-4 bg-light rounded shadow">
+          <form class="p-4 bg-light rounded shadow" id="quote-form">
             <div class="row gx-3">
               <div class="col-6">
                 <div class="form-floating">
@@ -396,6 +396,7 @@
                     class="form-control"
                     id="form-floating-1"
                     placeholder="John Doe"
+                    name="name"
                   />
                   <label for="form-floating-1">Full Name</label>
                 </div>
@@ -407,6 +408,7 @@
                     class="form-control"
                     id="form-floating-1"
                     placeholder="John Doe"
+                    name="email"
                   />
                   <label for="form-floating-1">Email</label>
                 </div>
@@ -418,6 +420,7 @@
                     class="form-control"
                     id="form-floating-1"
                     placeholder="John Doe"
+                    name="subject"
                   />
                   <label for="form-floating-1">Phone</label>
                 </div>
@@ -427,10 +430,37 @@
                   Request A Quote
                 </button>
               </div>
+              <script>
+                document
+                  .getElementById("quote-form")
+                  .addEventListener("submit", async function (event) {
+                    event.preventDefault();
+                    const formData = {
+                      name: this.name.value,
+                      email: this.email.value,
+                      subject: this.subject.value,
+                      message: this.message.value,
+                    };
+                    const response = await fetch(
+                      "/.netlify/functions/contact",
+                      {
+                        method: "POST",
+                        headers: { "Content-Type": "application/json" },
+                        body: JSON.stringify(formData),
+                      }
+                    );
+                    const result = await response.json();
+                    alert(result.message || result.error);
+                  });
+                if (response.ok) {
+                  this.reset();
+                }
+              </script>
               <!-- New Text Area -->
               <div class="col-12 mt-3">
                 <div class="form-floating">
                   <textarea
+                    name="message"
                     class="form-control"
                     id="message"
                     placeholder="Enter your message"
